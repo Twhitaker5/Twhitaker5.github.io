@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+	<head>
+	    <script>
+    var Turn = 0;
+function Play(id) {
+    if(document.getElementById(id).innerHTML == "."){
+    if(Turn == 0 || Turn == 2 || Turn == 4 || Turn == 6 || Turn == 8)
+    {
+        document.getElementById(id).innerHTML = "X";
+        document.getElementById(id).style.color = 'blue';
+    }
+    else if(Turn == 1 || Turn == 3 || Turn == 5 || Turn == 7 || Turn == 9)
+    {
+        document.getElementById(id).innerHTML = "O";
+        document.getElementById(id).style.color = 'red';
+    }
+    Turn = Turn + 1;
+    }
+    CheckWin();
+}
+
+function CheckWin(){
+    if (document.getElementById("Title").innerHTML != "O WON!" || document.getElementById("Title").innerHTML != "X WON!"){
+    if(Turn >= 9){
+        document.getElementById("Title").innerHTML = "Draw";
+    }
+    if(document.getElementById("upleft").innerHTML == "X" && document.getElementById("upcenter").innerHTML == "X" && document.getElementById("upright").innerHTML == "X"){
+        document.getElementById("Title").innerHTML = "X WON!";
+    }
+    else if(document.getElementById("centerleft").innerHTML == "X" && document.getElementById("centercenter").innerHTML == "X" && document.getElementById("centerright").innerHTML == "X"){
+        document.getElementById("Title").innerHTML = "X WON!";
+    }
+    else if(document.getElementById("bottomleft").innerHTML == "X" && document.getElementById("bottomcenter").innerHTML == "X" && document.getElementById("bottomright").innerHTML == "X"){
+        document.getElementById("Title").innerHTML = "X WON!";
+    }
+    else if(document.getElementById("bottomleft").innerHTML == "X" && document.getElementById("centerleft").innerHTML == "X" && document.getElementById("upleft").innerHTML == "X"){
+        document.getElementById("Title").innerHTML = "X WON!";
+    }
+    else if(document.getElementById("bottomcenter").innerHTML == "X" && document.getElementById("centercenter").innerHTML == "X" && document.getElementById("upcenter").innerHTML == "X"){
+        document.getElementById("Title").innerHTML = "X WON!";
+    }
+    else if(document.getElementById("bottomright").innerHTML == "X" && document.getElementById("centerright").innerHTML == "X" && document.getElementById("upright").innerHTML == "X"){
+        document.getElementById("Title").innerHTML = "X WON!";
+    }
+    else if(document.getElementById("bottomright").innerHTML == "X" && document.getElementById("centercenter").innerHTML == "X" && document.getElementById("upleft").innerHTML == "X"){
+        document.getElementById("Title").innerHTML = "X WON!";
+    }
+    else if(document.getElementById("bottomleft").innerHTML == "X" && document.getElementById("centercenter").innerHTML == "X" && document.getElementById("upright").innerHTML == "X"){
+        document.getElementById("Title").innerHTML = "X WON!";
+    }
+    else if(document.getElementById("upleft").innerHTML == "O" && document.getElementById("upcenter").innerHTML == "O" && document.getElementById("upright").innerHTML == "O"){
+        document.getElementById("Title").innerHTML = "O WON!";
+    }
+    else if(document.getElementById("centerleft").innerHTML == "O" && document.getElementById("centercenter").innerHTML == "O" && document.getElementById("centerright").innerHTML == "O"){
+        document.getElementById("Title").innerHTML = "O WON!";
+    }
+    else if(document.getElementById("bottomleft").innerHTML == "O" && document.getElementById("bottomcenter").innerHTML == "O" && document.getElementById("bottomright").innerHTML == "O"){
+        document.getElementById("Title").innerHTML = "O WON!";
+    }
+    else if(document.getElementById("bottomleft").innerHTML == "O" && document.getElementById("centerleft").innerHTML == "O" && document.getElementById("upleft").innerHTML == "O"){
+        document.getElementById("Title").innerHTML = "O WON!";
+    }
+    else if(document.getElementById("bottomcenter").innerHTML == "O" && document.getElementById("centercenter").innerHTML == "O" && document.getElementById("upcenter").innerHTML == "O"){
+        document.getElementById("Title").innerHTML = "O WON!";
+    }
+    else if(document.getElementById("bottomright").innerHTML == "O" && document.getElementById("centerright").innerHTML == "O" && document.getElementById("upright").innerHTML == "O"){
+        document.getElementById("Title").innerHTML = "O WON!";
+    }
+    else if(document.getElementById("bottomright").innerHTML == "O" && document.getElementById("centercenter").innerHTML == "O" && document.getElementById("upleft").innerHTML == "O"){
+        document.getElementById("Title").innerHTML = "O WON!";
+    }
+    else if(document.getElementById("bottomleft").innerHTML == "O" && document.getElementById("centercenter").innerHTML == "O" && document.getElementById("upright").innerHTML == "O"){
+        document.getElementById("Title").innerHTML = "O WON!";
+    }
+    }
+}
+
+
+</script>
+		<title>Tic Tac Toe</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+		<style>
+			.header	.custom-logo{
+				width: 140px;
+				height: auto;
+			}
+			.spacer{
+				position: relative;
+				height: 80px;
+			}
+
+			/******************
+			*	Main style start here
+			******************/
+			.grid-box{
+				display: grid;
+				grid-gap: 20px;
+				grid-template-columns: repeat(3, 1fr);
+				margin-bottom: 40px;
+				z-index: 5;
+
+			}
+
+			.cell{
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				box-shadow: 0 0px 2px rgb(0 0 0 / 7%), 0 5px 6px rgb(0 0 0 / 16%);
+				height: 200px;
+				font-size:150px;
+				color: white;
+				background-color: white;
+				z-index: 5;
+
+			}
+			.bckground{
+			    z-index: 3;
+			    height: 640px;
+			    width: 1106px;
+			    background-color: black;
+			    position: fixed;
+			    display:flex;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-12 mt-5 text-center">
+					<h1 id = "Title" style = "left: 30px; z-index: 5; position: fixed; font-size:200px; color: black;">Tic Tac Toe</h1>
+					<button id = "restart" onclick="window.location.reload();" style = "top:400px; left: 30px; z-index: 5; position: fixed; font-size:200px; color: black;">Restart</button>
+				</div>
+			</div>
+
+			<div class="row mt-3">
+				<div class="col-12">
+
+					<div class="grid-box">
+						<button class = "cell" id = "upleft" onclick="Play('upleft')";>.</button>
+						<button class = "cell" id = "upcenter" onclick="Play('upcenter')";>.</button>
+						<button class = "cell" id = "upright" onclick="Play('upright')";>.</button>
+						<button class = "cell" id = "centerleft" onclick="Play('centerleft')";>.</button>
+						<button class = "cell" id = "centercenter" onclick="Play('centercenter')";>.</button>
+						<button class = "cell" id = "centerright" onclick="Play('centerright')";>.</button>
+						<button class = "cell" id = "bottomleft" onclick="Play('bottomleft')";>.</button>
+						<button class = "cell" id = "bottomcenter" onclick="Play('bottomcenter')";>.</button>
+						<button class = "cell" id = "bottomright" onclick="Play('bottomright')";>.</button>
+						<div class="bckground"></div>
+					</div>
+				</div>
+			</div>
+			<div class="spacer"></div>
+		</div>
+
+
+	</body>
+</html>
