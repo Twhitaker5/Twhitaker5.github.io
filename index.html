@@ -124,37 +124,14 @@ function CheckWin(){
 			    position: fixed;
 			    display:flex;
 			}
+			.container{
+				/*position: fixed;*/
+			    /*display:flex;*/
+
+			}
+
 		</style>
 	</head>
 	<body>
+		<h1 id = "Title" style = "left: 30px; z-index: 5; position: fixed; font-size:200px; color: black;">Tic Tac Toe</h1>
 		<div class="container">
-			<div class="row">
-				<div class="col-12 mt-5 text-center">
-					<h1 id = "Title" style = "left: 30px; z-index: 5; position: fixed; font-size:200px; color: black;">Tic Tac Toe</h1>
-					<button id = "restart" onclick="window.location.reload();" style = "top:400px; left: 30px; z-index: 5; position: fixed; font-size:200px; color: black;">Restart</button>
-				</div>
-			</div>
-
-			<div class="row mt-3">
-				<div class="col-12">
-
-					<div class="grid-box">
-						<button class = "cell" id = "upleft" onclick="Play('upleft')";>.</button>
-						<button class = "cell" id = "upcenter" onclick="Play('upcenter')";>.</button>
-						<button class = "cell" id = "upright" onclick="Play('upright')";>.</button>
-						<button class = "cell" id = "centerleft" onclick="Play('centerleft')";>.</button>
-						<button class = "cell" id = "centercenter" onclick="Play('centercenter')";>.</button>
-						<button class = "cell" id = "centerright" onclick="Play('centerright')";>.</button>
-						<button class = "cell" id = "bottomleft" onclick="Play('bottomleft')";>.</button>
-						<button class = "cell" id = "bottomcenter" onclick="Play('bottomcenter')";>.</button>
-						<button class = "cell" id = "bottomright" onclick="Play('bottomright')";>.</button>
-						<div class="bckground"></div>
-					</div>
-				</div>
-			</div>
-			<div class="spacer"></div>
-		</div>
-
-
-	</body>
-</html>
